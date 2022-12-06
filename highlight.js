@@ -1,0 +1,43 @@
+const xscale = 28;
+const yscale = 28.2;
+let inputT = 0;
+let inputR = 0;
+let inputS = 0;
+let xPos = 0;
+let yPos = 0;
+let highlight_x = 0;
+let highlight_y = 0;
+let highlight_x2 = 0;
+let highlight_y2 = 0;
+let canvas_back = document.getElementById('canvas_back');
+let canvas_front = document.getElementById('canvas_front');
+let ctx_back = canvas_back.getContext('2d');
+let ctx_front = canvas_front.getContext('2d');
+
+const img = new Image();
+img.src = "EDITmapcc.png"
+
+img.onload = function(){          
+    ctx_back.drawImage(img,0,0);  
+};
+
+function runHigh(){
+    inputT = document.getElementById("inputT").value;
+    inputR = document.getElementById("inputR").value;
+    inputS = document.getElementById("inputS").value;
+    calculatePos();
+    highlightTownship();
+};
+
+function calculatePos(){
+    xPos = ((inputR-1)*6)+1;
+    yPos = (((inputT-6))*6)+1;
+    
+    highlight_x = (xscale * xPos) + 15;
+    highlight_y = (yscale * yPos) + 65;
+};
+
+function highlightTownship(){    
+    ctx_front.fillStyle = 'rgba(225, 225, 0, 0.25)';
+    ctx_front.fillRect(highlight_x, highlight_y, xscale * 6, yscale *  6);
+};
