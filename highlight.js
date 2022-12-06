@@ -7,8 +7,8 @@ let xPos = 0;
 let yPos = 0;
 let highlight_x = 0;
 let highlight_y = 0;
-let highlight_x2 = 0;
-let highlight_y2 = 0;
+let offsetX = 0;
+let offsetY = 0;
 let canvas_back = document.getElementById('canvas_back');
 let canvas_front = document.getElementById('canvas_front');
 let ctx_back = canvas_back.getContext('2d');
@@ -30,9 +30,26 @@ function runHigh(){
 };
 
 function calculatePos(){
+    if(inputS >= 1 && inputS < 7){
+        console.log("firstRow")
+    }
+    if(inputS >= 7 && inputS < 13){
+        console.log("secondRow")
+    }
+    if(inputS >= 13 && inputS < 19){
+        console.log("thirdRow")
+    }
+    if(inputS >= 19 && inputS < 25){
+        console.log("fourthRow")
+    }
+    if(inputS >= 25 && inputS < 31){
+        console.log("fifthRow")
+    }
+    if(inputS >= 31){
+        console.log("sixthRow")
+    }
     xPos = ((inputR-1)*6)+1;
     yPos = (((inputT-6))*6)+1;
-    
     highlight_x = (xscale * xPos) + 15;
     highlight_y = (yscale * yPos) + 65;
 };
