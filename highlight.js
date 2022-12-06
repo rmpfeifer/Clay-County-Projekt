@@ -31,30 +31,43 @@ function runHigh(){
 
 function calculatePos(){
     if(inputS >= 1 && inputS < 7){
-        console.log("firstRow")
+        //firstrow
+        offsetY = 1
+        offsetX = (7-(inputS%6))
     }
-    if(inputS >= 7 && inputS < 13){
-        console.log("secondRow")
+    else if(inputS >= 7 && inputS < 13){
+        //secondrow
+        offsetY = 2
+        offsetX = ((inputS%6))
     }
-    if(inputS >= 13 && inputS < 19){
-        console.log("thirdRow")
+    else if(inputS >= 13 && inputS < 19){
+        //thirdrow
+        offsetY = 3
+        offsetX = (7-(inputS%6))
     }
-    if(inputS >= 19 && inputS < 25){
-        console.log("fourthRow")
+    else if(inputS >= 19 && inputS < 25){
+        //fourthrow
+        offsetY = 4
+        offsetX = ((inputS%6))
     }
-    if(inputS >= 25 && inputS < 31){
-        console.log("fifthRow")
+    else if(inputS >= 25 && inputS < 31){
+        //fifthrow
+        offsetY = 5
+        offsetX = (7-(inputS%6))
     }
-    if(inputS >= 31){
-        console.log("sixthRow")
+    else if(inputS >= 31){
+        //sixthrow
+        offsetY = 6
+        offsetX = ((inputS%6))
     }
-    xPos = ((inputR-1)*6)+1;
-    yPos = (((inputT-6))*6)+1;
+
+    xPos = ((inputR-1)*6)+offsetX;
+    yPos = (((inputT-6))*6)+offsetY;
     highlight_x = (xscale * xPos) + 15;
     highlight_y = (yscale * yPos) + 65;
 };
 
 function highlightTownship(){    
     ctx_front.fillStyle = 'rgba(225, 225, 0, 0.25)';
-    ctx_front.fillRect(highlight_x, highlight_y, xscale * 6, yscale *  6);
+    ctx_front.fillRect(highlight_x, highlight_y, xscale, yscale);
 };
