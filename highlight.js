@@ -59,7 +59,7 @@ function calculatePos(){
         //sixthrow
         offsetY = 6
         offsetX = ((inputS%6))
-    }
+    } 
 
     xPos = ((inputR-1)*6)+offsetX;
     yPos = (((inputT-6))*6)+offsetY;
