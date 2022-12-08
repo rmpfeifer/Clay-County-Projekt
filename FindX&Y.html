@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html onclick="display(event)">
+<body>
+   <h3>Find the coordinates of the cursor with JavaScript</h3>
+   <p id="para">Click anywhere on the screen to see X and Y-coordinate of the cursor using JavaScript properties.</p>
+   <p id="result"></p>
+   <script>
+      function display(event) {
+         let X = event.clientX;
+         let Y = event.clientY;
+         let result = document.getElementById("result");
+         result.innerHTML = "<b>X-coordinate: </b>" + X + "<br><b>Y-coordinate: </b>: " + Y;
+      }
+   </script>
+</body>
+</html>
