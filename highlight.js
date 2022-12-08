@@ -71,3 +71,15 @@ function highlightTownship(){
     ctx_front.fillStyle = 'rgba(225, 225, 0, 0.25)';
     ctx_front.fillRect(highlight_x, highlight_y, xscale, yscale);
 };
+
+function clickmap(){
+    console.log("yes")
+    function display(event) {
+         let X = event.clientX;
+         let Y = event.clientY;
+         let result = document.getElementById("result");
+         result.innerHTML = "<b>X-coordinate: </b>" + X + "<br><b>Y-coordinate: </b>: " + Y;
+      }
+}
+
+canvas_front.addEventListener("click", clickmap, false);
