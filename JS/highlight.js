@@ -1,9 +1,7 @@
-const xscale = 28;
-const yscale = 28.2;
+const xscale = 27.1;
+const yscale = 28;
 let xPos = 0;
 let yPos = 0;
-let highlight_x = 0;
-let highlight_y = 0;
 let offsetX = 0;
 let offsetY = 0;
 let canvas_back = document.getElementById('canvas_back');
@@ -29,7 +27,7 @@ function runHigh(inputR,inputT,inputS){
     else if(inputS >= 7 && inputS < 13){
         //secondrow
         offsetY = 2
-        offsetX = ((inputS%6))
+        offsetX = (2+(inputS%6))
     }
     else if(inputS >= 13 && inputS < 19){
         //thirdrow
@@ -39,7 +37,7 @@ function runHigh(inputR,inputT,inputS){
     else if(inputS >= 19 && inputS < 25){
         //fourthrow
         offsetY = 4
-        offsetX = ((inputS%6))
+        offsetX = (2+(inputS%6))
     }
     else if(inputS >= 25 && inputS < 31){
         //fifthrow
@@ -49,18 +47,18 @@ function runHigh(inputR,inputT,inputS){
     else if(inputS >= 31){
         //sixthrow
         offsetY = 6
-        offsetX = ((inputS%6))
+        offsetX = (2+(inputS%6))
     } 
 
     xPos = ((inputR-1)*6)+offsetX;
     yPos = (((inputT-6))*6)+offsetY;
-    highlight_x = (xscale * xPos) + 15;
-    highlight_y = (yscale * yPos) + 65;
-    highlightTownship();
+
+    
+    highlightTownship((xscale * xPos) - 12 ,(yscale * yPos) + 65);
 };
 
 
-function highlightTownship(){    
+function highlightTownship(highlight_x,highlight_y){    
     ctx_front.fillStyle = 'rgba(225, 225, 0, 0.25)';
     ctx_front.fillRect(highlight_x, highlight_y, xscale, yscale);
 };

@@ -38,10 +38,10 @@ $("#foo").submit(function(event){
     request.done(function (response){
         // Log a message to the console
         console.log("Hooray, it worked!");
-        console.log(response);
+        console.log(response.length);
         const $results = response;
-        for(i=0;i<response.length;i++){
-            runHigh(1,6,6);
+        for(i=1;i<10;i++){
+            runHigh(1,6,i);
         }
     });
     // Callback handler that will be called on failure
