@@ -14,8 +14,10 @@ let ctx_front = canvas_front.getContext('2d');
 let img = new Image();
 img.src = "IMG/mapcc.png"
 
-img.onload = function(){          
-    ctx_back.drawImage(img,0,0);  
+img.onload = function(){
+    let width = Math.floor(img.naturalWidth * 0.75),
+        height = Math.floor(img.naturalHeight * 0.75);
+    ctx_back.drawImage(img,0,0,width,height);  
 };
 
 function runHigh(inputR,inputT,inputS){
