@@ -1,5 +1,5 @@
 const xscale = 27.1;
-const yscale = 28;
+const yscale = 27.6;
 let xPos = 0;
 let yPos = 0;
 let offsetX = 0;
