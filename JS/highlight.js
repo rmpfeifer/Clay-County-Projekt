@@ -18,6 +18,10 @@ img.onload = function(){
     ctx_front.drawImage(img,0,0,width,height);  
 };
 
+function canSet(){
+    ctx_front.drawImage(img,0,0,width,height); 
+}
+
 function runHigh(inputR,inputT,inputS){
     if(inputS >= 1 && inputS < 7){
         //firstrow
