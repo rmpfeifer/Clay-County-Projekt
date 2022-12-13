@@ -1,3 +1,5 @@
+let select = 0;
+
 function test() {
     console.log("Test");
   }
@@ -40,9 +42,8 @@ $("#foo").submit(function(event){
         console.log("Hooray, it worked!");
         console.log(response.length);
         const $results = response;
-        for(i=1;i<10;i++){
-            runHigh(1,6,i);
-        }
+        select++
+        runHigh(1,6,select)
     });
     // Callback handler that will be called on failure
     request.fail(function (jqXHR, textStatus, errorThrown){

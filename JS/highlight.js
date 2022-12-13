@@ -4,9 +4,9 @@ let xPos = 0;
 let yPos = 0;
 let offsetX = 0;
 let offsetY = 0;
-let canvas_back = document.getElementById('canvas_back');
+let offsetMath = 0;
+
 let canvas_front = document.getElementById('canvas_front');
-let ctx_back = canvas_back.getContext('2d');
 let ctx_front = canvas_front.getContext('2d');
 
 let img = new Image();
@@ -15,39 +15,45 @@ img.src = "IMG/mapcc.png"
 img.onload = function(){
     let width = Math.floor(img.naturalWidth * 0.75),
         height = Math.floor(img.naturalHeight * 0.75);
-    ctx_back.drawImage(img,0,0,width,height);  
+    ctx_front.drawImage(img,0,0,width,height);  
 };
 
 function runHigh(inputR,inputT,inputS){
     if(inputS >= 1 && inputS < 7){
         //firstrow
+        offsetMath = inputS-1
         offsetY = 1
-        offsetX = (7-(inputS%6))
+        offsetX = (7-(offsetMath))
     }
     else if(inputS >= 7 && inputS < 13){
         //secondrow
+        offsetMath = inputS - 5
         offsetY = 2
-        offsetX = (2+(inputS%6))
+        offsetX = (offsetMath)
     }
     else if(inputS >= 13 && inputS < 19){
         //thirdrow
+        offsetMath = inputS - 13
         offsetY = 3
-        offsetX = (7-(inputS%6))
+        offsetX = (7-(offsetMath))
     }
     else if(inputS >= 19 && inputS < 25){
         //fourthrow
+        offsetMath = inputS - 17
         offsetY = 4
-        offsetX = (2+(inputS%6))
+        offsetX = (offsetMath)
     }
     else if(inputS >= 25 && inputS < 31){
         //fifthrow
+        offsetMath = inputS - 25
         offsetY = 5
-        offsetX = (7-(inputS%6))
+        offsetX = (7-(offsetMath))
     }
     else if(inputS >= 31){
         //sixthrow
+        offsetMath = inputS - 29
         offsetY = 6
-        offsetX = (2+(inputS%6))
+        offsetX = (offsetMath)
     } 
 
     xPos = ((inputR-1)*6)+offsetX;
