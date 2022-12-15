@@ -19,6 +19,8 @@ img.onload = function(){
 };
 
 function canSet(){
+    let width = Math.floor(img.naturalWidth * 0.75),
+        height = Math.floor(img.naturalHeight * 0.75);
     ctx_front.drawImage(img,0,0,width,height); 
 }
 
