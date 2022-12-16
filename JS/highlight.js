@@ -71,7 +71,7 @@ function runHigh(inputR,inputT,inputS){
 
 
 function highlightTownship(highlight_x,highlight_y){    
-    ctx_front.fillStyle = 'rgba(225, 225, 0, 0.25)';
+    ctx_front.fillStyle = 'rgba(225, 0, 0, 0.55)';
     ctx_front.fillRect(highlight_x, highlight_y, xscale, yscale);
 };
 
